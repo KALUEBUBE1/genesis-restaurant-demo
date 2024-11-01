@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesis Restaurant - Simplified</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f8f8;
+    }
+
+    /* Header */
+    .header {
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      background-color: #333;
+    }
+    .nav a {
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .nav a:hover {
+      background-color: #e74c3c;
+    }
+
+    /* Hero Section */
+        .hero {
+      display: flex;
+      height: 60vh;
+    }
+
+    .hero-image {
+      flex: 1;
+      background-image: url('banner 1.png'); /* Replace with actual image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-text {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background-color: #f4f4f4;
+      text-align: center;
+      color: #333;
+    }
+
+    .hero-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+
+
+    /* About Section */
+    .about {
+      padding: 2rem;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Chatbot Button */
+    .chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal Background */
+    .modal-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 370px;
+      text-align: center;
+    }
+
+    /* Close Button */
+    .close-btn {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Genesis Restaurant</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+   <section class="hero">
+    <!-- Left Side: Image -->
+    <div class="hero-image"></div>
+
+    <!-- Right Side: Welcome Text -->
+    <div class="hero-text">
+      <div>
+        <h2>Welcome to Genesis Restaurant</h2>
+        <p>Your favorite meals delivered fresh to your door.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>Genesis Restaurant has been a household name for quality meals and excellent service. We are dedicated to bringing the best dining experience to our customers.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Genesis Restaurant. All rights reserved.</p>
+  </footer>
+
+  <!-- Chatbot Button -->
+  <button class="chatbot-btn" onclick="openModal()">Chat with Us</button>
+
+  <!-- Modal for Chatbot -->
+  <div class="modal-bg" id="chatbotModal">
+    <div class="modal-content">
+<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/160fecac-7754-4d61-9c98-5aee61451c2b"></iframe>      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to open the modal
+    function openModal() {
+      document.getElementById('chatbotModal').style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('chatbotModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
