@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genesis Restaurant - Simplified</title>
+  <title>Genesis Restaurant - Responsive</title>
   <style>
     /* Basic Reset */
     * {
@@ -36,6 +36,7 @@
     .nav {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 1rem;
       background-color: #333;
     }
@@ -43,16 +44,17 @@
       color: #fff;
       padding: 0.5rem 1rem;
       text-decoration: none;
-      margin: 0 0.5rem;
+      margin: 0.5rem;
     }
     .nav a:hover {
       background-color: #e74c3c;
     }
 
     /* Hero Section */
-        .hero {
+    .hero {
       display: flex;
-      height: 60vh;
+      flex-wrap: wrap;
+      height: auto;
     }
 
     .hero-image {
@@ -60,6 +62,7 @@
       background-image: url('banner 1.png'); /* Replace with actual image URL */
       background-size: cover;
       background-position: center;
+      min-height: 270px;
     }
 
     .hero-text {
@@ -74,14 +77,12 @@
     }
 
     .hero-text h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
     .hero-text p {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
-
-
 
     /* About Section */
     .about {
@@ -89,7 +90,7 @@
       text-align: center;
     }
     .about h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
     .about p {
@@ -140,7 +141,8 @@
       background: #fff;
       padding: 20px;
       border-radius: 8px;
-      width: 370px;
+      width: 90%;
+      max-width: 370px;
       text-align: center;
     }
 
@@ -152,6 +154,39 @@
       padding: 5px 10px;
       cursor: pointer;
       margin-top: 10px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+      .hero-text p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      .nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+      .hero-text h2 {
+        font-size: 1.5rem;
+      }
+      .hero-text p {
+        font-size: 0.8rem;
+      }
+      .chatbot-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
@@ -171,11 +206,8 @@
   </nav>
 
   <!-- Hero Section -->
-   <section class="hero">
-    <!-- Left Side: Image -->
+  <section class="hero">
     <div class="hero-image"></div>
-
-    <!-- Right Side: Welcome Text -->
     <div class="hero-text">
       <div>
         <h2>Welcome to Genesis Restaurant</h2>
@@ -201,17 +233,15 @@
   <!-- Modal for Chatbot -->
   <div class="modal-bg" id="chatbotModal">
     <div class="modal-content">
-<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/160fecac-7754-4d61-9c98-5aee61451c2b"></iframe>      <button class="close-btn" onclick="closeModal()">Close</button>
+      <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/160fecac-7754-4d61-9c98-5aee61451c2b"></iframe>
+      <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
   </div>
 
   <script>
-    // Function to open the modal
     function openModal() {
       document.getElementById('chatbotModal').style.display = 'flex';
     }
-
-    // Function to close the modal
     function closeModal() {
       document.getElementById('chatbotModal').style.display = 'none';
     }
